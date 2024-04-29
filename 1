@@ -1,0 +1,53 @@
+import sympy
+
+def evaluate_expression(expression):
+    x = sympy.symbols('x')
+    result = sympy.simplify(expression)
+    return result
+
+def solve_linear_equation(equation):
+    x = sympy.symbols('x')
+    solution = sympy.solve(equation, x)
+    return solution
+
+def factorize_expression(expression):
+    x = sympy.symbols('x')
+    factors = sympy.factor(expression)
+    return factors
+
+# Main function to interact with the user
+def main():
+    print("Welcome to the Algebraic Calculator App!")
+    while True:
+        print("\nChoose an option:")
+        print("1. Evaluate an algebraic expression")
+        print("2. Solve a linear equation")
+        print("3. Factorize an algebraic expression")
+        print("4. Exit")
+
+        choice = input("Enter your choice (1/2/3/4): ")
+
+        if choice == "1":
+            expression = input("Enter the algebraic expression: ")
+            result = evaluate_expression(expression)
+            print("Result: ", result)
+
+        elif choice == "2":
+            equation = input("Enter the linear equation: ")
+            solution = solve_linear_equation(equation)
+            print("Solution: ", solution)
+
+        elif choice == "3":
+            expression = input("Enter the algebraic expression to factorize: ")
+            factors = factorize_expression(expression)
+            print("Factors: ", factors)
+
+        elif choice == "4":
+            print("Thank you for using the Algebraic Calculator App!")
+            break
+
+        else:
+            print("Invalid choice. Please select a valid option.")
+
+if __name__ == "__main__":
+    main()
